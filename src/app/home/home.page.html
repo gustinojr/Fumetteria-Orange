@@ -1,11 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Fumetteria
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <p>check</p>
+<ion-content>
+  <p>ciao belli</p>
+<div class="category-block" >
+  <ion-slides [options]="sliderConfig">
+    <ion-slide *ngFor="let item of fumetti.list">
+     <ion-card>{{fumetti}}</ion-card> 
+<!-- <app-card-carosello *ngFor="let item of fumetti.list" -->
+<!-- fumetto="{{item.viewValue}}"> -->
+<!-- </app-card-carosello> -->
+</ion-slide>
+</ion-slides>
+</div>
 </ion-content>
