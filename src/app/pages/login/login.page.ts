@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+
+
 import { UserDTO } from 'src/app/models/user/user-dto';
 import { LoginService } from './login.service';
+
+import { FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -9,8 +13,12 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+username:string;
+password:string;
+formLogin;
 
-  constructor( private fb: FormBuilder , private user: LoginService) { }
+
+  
 
   loginServer(): void{
 
@@ -22,6 +30,15 @@ export class LoginPage implements OnInit {
       } )
 
   }
+
+
+  constructor(private fb:FormBuilder, private user: LoginService) {
+    this.formLogin=this.fb.group({
+      username: ['',Validators.required, Validators.email],
+      password:['',Validators.required,Validators.min(4)],
+  })
+   }
+
 
   ngOnInit() {
   }
