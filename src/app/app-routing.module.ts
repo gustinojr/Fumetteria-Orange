@@ -10,11 +10,12 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'lista-autori',
     loadChildren: () => import('./pages/lista-autori/lista-autori.module').then( m => m.ListaAutoriPageModule)
   },
-<<<<<<< HEAD
+
   {
     path: '',
     redirectTo: 'home',
@@ -24,10 +25,6 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
-];
-=======
->>>>>>> 14373061cb3a778fe576fd99fd4be95a1af74290
-
 ];
 
 @NgModule({
