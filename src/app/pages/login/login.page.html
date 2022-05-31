@@ -1,4 +1,5 @@
 <ion-content>
+<form [formGroup]="formLogin">
   <ion-grid>
     <ion-row>
       <ion-col class="ion-text-center" style="padding:100px;">
@@ -13,7 +14,7 @@
       <ion-col>
         <ion-item>
           <ion-label for="uname" position="floating">Username</ion-label>
-          <ion-input id="uname" placeholder="Inserisci e-mail">
+          <ion-input placeholder="Inserisci e-mail" type="email" id="email" formControlName="email" [(ngModel)]="email"> 
           </ion-input>
           <ion-icon slot="end" name="mail-sharp"></ion-icon>
         </ion-item>
@@ -27,7 +28,8 @@
       <ion-col>
         <ion-item>
           <ion-label for="pass" position="floating">Password</ion-label>
-          <ion-input id="pass" type="password" placeholder="Inserisci password"></ion-input>
+          <ion-input id="password" type="password" placeholder="Inserisci password" formControlName="password" [(ngModel)]="password"> 
+          </ion-input>
           <ion-icon slot="end" name="lock-open-sharp"></ion-icon>
         </ion-item>
       </ion-col>
@@ -39,8 +41,7 @@
       <ion-col></ion-col>
       <ion-col>
         <div class="ion-float-right">
-          <ion-button>
-            <!--[disabled]="!formLogin.valid" type="submit" [routerLink]= "['/home']"> -->
+          <ion-button [disabled]="!formLogin.valid"  (click)="loginServer()"> 
             LOGIN
           </ion-button>
         </div>
@@ -52,8 +53,9 @@
 
   <ion-footer class="footer">
     <ion-toolbar>
-      <ion-title style="color:white">DevSkill School 2022 - Fumetteria Orange Team</ion-title>
+      <ion-title  style="color:rgb(255, 255, 255)">DevSkill School 2022 - Fumetteria Orange Team</ion-title>
     </ion-toolbar>
   </ion-footer>
 
+</form>
 </ion-content>

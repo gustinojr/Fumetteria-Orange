@@ -13,18 +13,19 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-username:string;
+email:string;
 password:string;
-formLogin;
 
+formLogin;
+clickable=true;
 
   
 
-  loginServer(): void{
+  loginServer(){
 
-      this.user.login(this.formLogin.get("username").value, this.formLogin.get("password").value).subscribe(res => {
+      this.user.login(this.email, this.password).subscribe(resp => {
         
-        const data: UserDTO = res;
+        const data: UserDTO = resp;
         console.log(data);
 
       } )
@@ -33,14 +34,14 @@ formLogin;
 
 
   constructor(private fb:FormBuilder, private user: LoginService) {
-    this.formLogin=this.fb.group({
-      username: ['',Validators.required, Validators.email],
-      password:['',Validators.required,Validators.min(4)],
-  })
+   
    }
 
 
-  ngOnInit() {
+  ngOnInit() { this.formLogin=this.fb.group({
+      email: ['',[Validators.required, Validators.email]],
+      password:['',[Validators.pattern,Validators.required,Validators.minLength(4)]],
+  })
   }
 
 }
