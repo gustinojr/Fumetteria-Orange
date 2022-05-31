@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'lista-autori',
+    loadChildren: () => import('./pages/lista-autori/lista-autori.module').then( m => m.ListaAutoriPageModule)
   },
+
 ];
 
 @NgModule({
