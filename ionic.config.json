@@ -1,0 +1,7 @@
+{
+  "name": "Fumetteria Orange",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
