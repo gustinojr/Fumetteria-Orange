@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Fumetteria
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>ciao belli</p>
+  <div class="category-block" class="swiper" class="fullclick">
+    <ion-slides [options]="sliderConfig">
+      <ion-slide *ngFor="let item of fumetti.list">
+        <ion-card-title>{{item.name}}
+          <ion-card class="main">
+            <div *ngIf="bottom" class="pop" (click)="cliccato()">
+
+              <ion-card>
+                <ion-card-content>{{item.name}}{{item.authorName}}{{item.authorSurname}}</ion-card-content>
+                <ion-card-header><img src="https://picsum.photos/400/700"></ion-card-header>
+                
+              </ion-card>
+            </div>
+            <div *ngIf="top">
+              <a (click)="cliccato()"><img src="https://picsum.photos/400/700"></a>
+            </div>
+          </ion-card>
+        </ion-card-title>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>

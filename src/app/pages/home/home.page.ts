@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ListaService } from '../home.service';
-import { ListaFumettiDto } from '../models/DTO/lista-dto';
+import { ListaService } from '../../home.service';
+import { ListaFumettiDto } from '../../models/DTO/lista-dto';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +9,20 @@ import { ListaFumettiDto } from '../models/DTO/lista-dto';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
-
+bottom=false;
+top=true;
 fumetti:ListaFumettiDto;
  sliderConfig = {
   spaceBetween: 10,
   centeredSlides: true,
-  slidesPerView:1.6
+  slidesPerView:1.6,
+  autoplay: true
 };
+
+ cliccato(){
+  this.bottom=!this.bottom;
+  this.top=!this.top;
+ }
 
   constructor(private service:ListaService, private router:Router) {
     this.fumetti=new ListaFumettiDto;
@@ -25,5 +32,8 @@ fumetti:ListaFumettiDto;
     this.service.listaFumetti().subscribe((resp) => {
       this.fumetti = resp;
     });
+    
+   
+     
   }
 }

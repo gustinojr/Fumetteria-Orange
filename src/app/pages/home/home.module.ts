@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
-import { CardCaroselloComponent } from '../componets/card-carosello/card-carosello.component';
+
+
+
 
 
 @NgModule({
@@ -13,7 +15,8 @@ import { CardCaroselloComponent } from '../componets/card-carosello/card-carosel
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    
   ],
   declarations: [HomePage,]
 })
