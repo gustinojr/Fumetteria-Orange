@@ -1,8 +1,18 @@
 .footer {
   position: absolute;
-  bottom: 0;
+  bottom: 0%;
   left: 0;
   width: 100%;
   --ion-background-color: blueviolet;
   text-align: center;
+}
+
+.bottoni {
+  --ion-color-primary: #19356e;
+  --ion-color-primary-rgb: 25, 53, 110;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #162f61;
+  --ion-color-primary-tint: #30497d;
+ 
 }

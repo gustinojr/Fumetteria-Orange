@@ -4,7 +4,8 @@
     <ion-row>
       <ion-col class="ion-text-center" style="padding:100px;">
         <img src="assets\icon\logo_devskill@2x.png">
-        <h6> Benvenuti </h6>
+        <hr>
+        <h3> Benvenuti </h3>
       </ion-col>
     </ion-row>
 
@@ -13,10 +14,10 @@
       <ion-col></ion-col>
       <ion-col>
         <ion-item>
-          <ion-label for="uname" position="floating">Username</ion-label>
-          <ion-input placeholder="Inserisci e-mail" type="email" id="email" formControlName="email" [(ngModel)]="email"> 
+          <ion-label for="uname" position="floating">Email</ion-label>
+          <ion-input placeholder="Inserisci e-mail" type="email" id="email" formControlName="email" [(ngModel)]="email" (keyup)="eventoBottone()" (keyup.enter)="eventoDiClick()"> 
           </ion-input>
-          <ion-icon slot="end" name="mail-sharp"></ion-icon>
+          <ion-icon style="color: #0d2f60;" slot="end" name="mail-sharp"></ion-icon>
         </ion-item>
       </ion-col>
       <ion-col></ion-col>
@@ -28,9 +29,8 @@
       <ion-col>
         <ion-item>
           <ion-label for="pass" position="floating">Password</ion-label>
-          <ion-input id="password" type="password" placeholder="Inserisci password" formControlName="password" [(ngModel)]="password"> 
-          </ion-input>
-          <ion-icon slot="end" name="lock-open-sharp"></ion-icon>
+          <ion-input id="password" [type]="tipo" placeholder="Inserisci password" formControlName="password" [(ngModel)]="password" (keyup)="eventoBottone()" (keyup.enter)="eventoDiClick()"></ion-input>
+          <ion-icon style="color: #0d2f60;" class="password" (click)="cambioTipo()" slot="end" [icon]="eye"></ion-icon>
         </ion-item>
       </ion-col>
       <ion-col></ion-col>
@@ -41,7 +41,7 @@
       <ion-col></ion-col>
       <ion-col>
         <div class="ion-float-right">
-          <ion-button [disabled]="!formLogin.valid"  (click)="loginServer()"> 
+          <ion-button class="bottoni" [disabled]="disabilita" (click)="loginServer()"> 
             LOGIN
           </ion-button>
         </div>
