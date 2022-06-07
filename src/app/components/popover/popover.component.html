@@ -1,0 +1,18 @@
+<ion-button id="trigger-button" fill="clear">
+  <ion-icon name="person-outline" slot="icon-only" style="color:black"></ion-icon>
+</ion-button>
+<ion-popover trigger="trigger-button">
+  <ng-template>
+    <ion-content>
+      <ion-item>
+        <p style="color:white"> Nome utente </p>
+      </ion-item>
+      <ion-item>
+        <p style="color:white"> Email utente </p>
+      </ion-item>
+    </ion-content>
+    <ion-button style="color:white; background-color:#ed5bf0;" fill="clear">
+      Logout
+    </ion-button>
+  </ng-template>
+</ion-popover>
