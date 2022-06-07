@@ -1,0 +1,116 @@
+<ion-content>
+  <form [formGroup]="formLogin">
+    <ion-grid style="padding:100px;">
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <ion-button class="bottoni" routerLink="/home"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg> Torna indietro </ion-button>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <h1 style="font-weight: bold; font-size: 30px"> Crea utente </h1>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+  
+  
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <h6 class="ion-text-center" style="font-weight: bold;">Nome</h6>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label class="col-sm-2 col-form-label" for="name" position="floating">Nome</ion-label>
+            <ion-input placeholder="Nome" id="name" formControlName="name" [(ngModel)]="name" (keyup)="eventoBottone()" (keyup.enter)="eventoDiClick()"> 
+            </ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <h6 class="ion-text-center" style="font-weight: bold;">Cognome</h6>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label for="surname" position="floating">Cognome</ion-label>
+            <ion-input placeholder="Cognome" id="surname" formControlName="surname" [(ngModel)]="surname" (keyup)="eventoBottone()" (keyup.enter)="eventoDiClick()"> 
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <h6 class="ion-text-center" style="font-weight: bold;">Email</h6>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label for="email" position="floating">Email</ion-label>
+            <ion-input placeholder="E-mail" type="email" id="email" formControlName="email" [(ngModel)]="email" (keyup)="eventoBottone()" (keyup.enter)="eventoDiClick()"> 
+            </ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <h6 class="ion-text-center" style="font-weight: bold;">Password</h6>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label for="password" position="floating">Password</ion-label>
+            <ion-input id="password" [type]="tipo" placeholder="Inserisci password" formControlName="password" [(ngModel)]="password" (keyup)="eventoBottone()" (keyup.enter)="eventoDiClick()"></ion-input>
+       
+          </ion-item>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+  <hr>
+  <hr>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col>
+          <div class="ion-float-right">
+            <ion-button class="bottoni" size="small" [disabled]="disabilita" (click)="creaUtente()"> 
+              Salva
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+  
+    </ion-grid>
+  
+    <ion-footer class="footer">
+      <ion-toolbar>
+        <ion-title  style="color:rgb(255, 255, 255)">DevSkill School 2022 - Fumetteria Orange Team</ion-title>
+      </ion-toolbar>
+    </ion-footer>
+  
+  </form>
+  </ion-content>
