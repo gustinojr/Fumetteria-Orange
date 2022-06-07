@@ -1,0 +1,30 @@
+.submenu {
+    align-content: flex-start;
+    transition: 300ms ease-in-out;
+    height: 0;
+    
+  }
+.submenu.expanded {
+
+  height: 144px;
+  }
+
+
+.menucolor{
+  z-index:5 !important;
+  --width: 25%;
+ --background:#0d2f60  !important;
+}
+
+ion-item {
+  --ion-background-color: #0d2f60 !important;
+  color:white;
+}
+
+.menu{
+  --background:#0d2f60  !important;
+}
+
+ion-icon{
+  color:white;
+}
