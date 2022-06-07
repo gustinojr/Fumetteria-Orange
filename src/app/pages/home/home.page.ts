@@ -16,10 +16,10 @@ export class HomePage implements OnInit {
 
   info =
     [{
-    Descrizione: "Questo è un bel fumetto;",
-    Genere: "Comic;",
-    Autore: "Pippo;",
-    Categoria: "Misc;"
+    Descrizione: "Descrizione: Questo è un bel fumetto;",
+    Genere: "Genere: Comic;",
+    Autore: "Autore: Pippo;",
+    Categoria: "Categoria: Misc;"
 }];
 
   sliderConfig = {

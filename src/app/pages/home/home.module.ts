@@ -6,6 +6,9 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
+import { NavbarModule } from 'src/app/components/navbar/navbar.module';
+import { FooterModule } from 'src/app/components/footer/footer.module';
+
 
 
 
@@ -16,6 +19,8 @@ import { HomePageRoutingModule } from './home-routing.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
+    NavbarModule,
+    FooterModule
     
   ],
   declarations: [HomePage,]
