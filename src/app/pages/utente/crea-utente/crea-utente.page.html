@@ -1,4 +1,16 @@
-<ion-content>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+   <app-navbar></app-navbar>
+    <ion-title>
+      Crea utente
+    </ion-title>
+  </ion-toolbar>
+
+  <app-benvenuto></app-benvenuto>
+
+</ion-header>
+
+<ion-content fullscreen="true">
   <form [formGroup]="formLogin">
     <ion-grid style="padding:100px;">
       <ion-row>
@@ -106,11 +118,9 @@
   
     </ion-grid>
   
-    <ion-footer class="footer">
-      <ion-toolbar>
-        <ion-title  style="color:rgb(255, 255, 255)">DevSkill School 2022 - Fumetteria Orange Team</ion-title>
-      </ion-toolbar>
-    </ion-footer>
-  
   </form>
   </ion-content>
+
+  <ion-toolbar>
+    <app-footer></app-footer>
+    </ion-toolbar>

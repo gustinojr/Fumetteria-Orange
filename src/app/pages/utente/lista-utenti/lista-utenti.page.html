@@ -1,11 +1,22 @@
-<app-navbar></app-navbar>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+   <app-navbar></app-navbar>
+    <ion-title>
+      Lista utenti
+    </ion-title>
+  </ion-toolbar>
 
-<ion-content fullscreen="true" *ngIf="pagina" style="max-height: 80%;">
+  <app-benvenuto></app-benvenuto>
+
+</ion-header>
+
+
+
+<ion-content fullscreen="true" *ngIf="pagina" style="max-height: 100%;">
   <div class="linea orizzontale">
   <ion-grid >
     <ion-row>
       <ion-col>
-        <h4 style="font-size: larger; font-weight: bold; margin-bottom: 14%;">Lista utenti</h4>
         <p style=" font-weight: bold;margin-bottom: 1%;position: relative;left: 5.5%;">Filtri</p>
         <ion-item class="input" lines="none">
           
@@ -98,11 +109,14 @@
     </div>
   </div>
 
-<ion-footer class="footer">
+<br>
+<br>
+
+<!-- <ion-footer class="footer">
   <ion-toolbar>
     <ion-title  style="color:rgb(255, 255, 255)">DevSkill School 2022 - Fumetteria Orange Team</ion-title>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->
 
 </ion-content>
 
@@ -212,7 +226,11 @@
       </ion-row>
   
     </ion-grid>
-  
-    <app-footer></app-footer>
+
+    
 
 </ion-content>
+
+<ion-toolbar>
+  <app-footer></app-footer>
+  </ion-toolbar>

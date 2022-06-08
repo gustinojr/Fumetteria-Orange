@@ -72,7 +72,7 @@ export class ListaUtentiPage implements OnInit {
 
   search() {
 
-    for (let i = 1; i < this.data.list.length; i++){
+    for (let i = 0; i < this.data.list.length; i++){
 
       if ((this.data.list[i].name.toUpperCase().includes(this.nome.toUpperCase()) && this.data.list[i].surname.toUpperCase().includes(this.cognome.toUpperCase())) || (this.nome == "" && this.cognome == ""))
         this.cerca[i] = true;
