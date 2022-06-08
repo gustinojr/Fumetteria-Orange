@@ -1,0 +1,208 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+   <app-navbar></app-navbar>
+    <ion-title>
+      Lista autori
+    </ion-title>
+  </ion-toolbar>
+
+  <app-benvenuto></app-benvenuto>
+
+</ion-header>
+
+
+
+<ion-content fullscreen="true" *ngIf="pagina" style="max-height: 100%;">
+  <div class="linea orizzontale">
+  <ion-grid >
+    <ion-row>
+      <ion-col>
+        <p style=" font-weight: bold;margin-bottom: 1%;position: relative;left: 5.5%;">Filtri</p>
+        <ion-item class="input" lines="none">
+          
+          <ion-col>
+         
+            <ion-input placeholder="NOME" id="nome" style="background-color: rgb(220, 214, 214); border: rgb(220, 214, 214) ;" [(ngModel)]="nome"></ion-input>
+          </ion-col>
+
+          <ion-col>
+          
+            <ion-input placeholder="COGNOME" id="cognome" style="background-color: rgb(220, 214, 214);margin: 2%;" [(ngModel)]="cognome"></ion-input>
+          </ion-col>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+      <ion-col></ion-col>
+
+    </ion-row>
+    <ion-row >
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col>
+        <div>
+          <ion-button class="bottoni" shape="round" (click)="reset()">RESET</ion-button>
+          <ion-button class="bottoni" shape="round" (click)="search()">CERCA</ion-button>
+        </div>
+      </ion-col>
+      
+    </ion-row>
+    </ion-grid>
+  </div>
+
+  <table *ngIf="attivo == true" class="tabella">
+    <tr style="background-color: #19356e ; width: 100%;text-align: center; color: white; border: 5px solid #19356e ">
+      <td style="border: 5px  solid #19356e" class="ion-text-left">NOME</td>
+      <td style="border: 5px  solid #19356e" class="ion-text-left">COGNOME</td>
+      <td style="border: 5px  solid #19356e" class="ion-text-left">AZIONE</td>
+    </tr>
+    <tr *ngFor="let item of data.list; index as i" style="background-color:#d2c9c9 ;text-align: center;">
+      <td *ngIf="cerca[i]" style="border: 5px  solid #d2c9c9;;" class="td" class="ion-text-left">{{item.name}}</td>
+      <td *ngIf="cerca[i]" style="border: 5px  solid #d2c9c9;;" class="td" class="ion-text-left"> {{item.surname}}</td>
+      <td *ngIf="cerca[i]" style="border: 5px  solid #d2c9c9;;"class="td" class="ion-text-left">
+      <ion-button style="color: #0d2f60;" fill="clear" (click)="cambiaVisione(item.name, item.surname, item.id)"><ion-icon *ngIf="cerca[i]" name="pencil-outline" style="margin: 1%;"></ion-icon></ion-button>
+      <ion-button style="color: #0d2f60;" fill="clear" (click)="mandaPopup(item.id, item.name, item.surname)"><ion-icon *ngIf="cerca[i]" name="trash" style="margin: 1%; margin-left: 10%;"></ion-icon></ion-button>
+      </td>
+    </tr>
+  </table>
+
+  <div *ngIf="popup == true" style="position: fixed; top: 40%; left: 40%; background-color: white; border: 2px solid; border-color: #0d2f60; border-radius: 5px; padding: 15px;">
+   
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+       <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalCenterTitle">Attenzione</h5>
+           </div>
+           <div class="modal-body" style="padding-bottom: 10px;">
+             Sei sicuro di voler eliminare {{lastNome}} {{lastCognome}}?
+           </div>
+           <div class="modal-footer" >
+             <ion-button fill="clear" type="button" class="btn btn-secondary" class="bottoni" shape="round" data-dismiss="modal" (click)="annulla()">Annulla</ion-button>
+             <ion-button type="button" class="btn btn-danger" class="bottoni" style="position: absolute; right: 5%;" shape="round" (click)="elimina()">Elimina</ion-button>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div *ngIf="popupElimina == true" style="position: fixed; top: 40%; left: 40%; background-color: white; border: 2px solid; border-color: #0d2f60; border-radius: 5px; padding: 15px;">
+   
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Attenzione</h5>
+          </div>
+          <div class="modal-body" style="padding-bottom: 10px;">
+            {{lastNome}} {{lastCognome}} è stato correttamente eliminato.
+          </div>
+          <div class="modal-footer" >
+            <ion-button type="button" class="bottoni" style="position: relative; left: 38%;" shape="round" (click)="mandaPopupElimina(true)">Ok</ion-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<br>
+<br>
+
+<!-- <ion-footer class="footer">
+  <ion-toolbar>
+    <ion-title  style="color:rgb(255, 255, 255)">DevSkill School 2022 - Fumetteria Orange Team</ion-title>
+  </ion-toolbar>
+</ion-footer> -->
+
+</ion-content>
+
+<ion-content *ngIf="!pagina" fullscreen="true">
+    <ion-grid style="padding:100px;">
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <ion-button class="bottoni" (click)="cambiaPagina()"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg> Torna indietro </ion-button>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+          <h1 style="font-weight: bold; font-size: 30px"> Modifica autore </h1>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+  
+  
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+          <h6 class="ion-text-center" style="font-weight: bold;">Nome</h6>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label class="col-sm-2 col-form-label" for="name" position="floating">Nome</ion-label>
+            <ion-input placeholder="Nome" id="name" [(ngModel)]="nome"> 
+            </ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col>
+          <h6 class="ion-text-center" style="font-weight: bold;">Cognome</h6>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label for="surname" position="floating">Cognome</ion-label>
+            <ion-input placeholder="Cognome" id="surname" [(ngModel)]="cognome"> 
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+  <hr>
+  <hr>
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col>
+          <div class="ion-float-right">
+            <ion-button class="bottoni" size="small" [disabled]="disabilita" (click)="updateAutore()"> 
+              Salva
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+  
+    </ion-grid>
+
+    
+
+</ion-content>
+
+<ion-toolbar>
+  <app-footer></app-footer>
+  </ion-toolbar>
