@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-benvenuto',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./benvenuto.component.scss'],
 })
 export class BenvenutoComponent implements OnInit {
+@Input() nome:string;
+@Input() cognome:string;
+@Input() email:string;
 
   constructor() { }
 

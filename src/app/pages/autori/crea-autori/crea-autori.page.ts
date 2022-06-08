@@ -1,5 +1,7 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { BenvenutoService } from 'src/app/components/benvenuto/benvenuto.service';
 import { UserDTO } from 'src/app/models/user/user-dto';
 import { CreaAutoriService } from '../../autori/crea-autori/crea-autori.service';
 
@@ -10,6 +12,8 @@ import { CreaAutoriService } from '../../autori/crea-autori/crea-autori.service'
   styleUrls: ['./crea-autori.page.scss'],
 })
 export class CreaAutoriPage implements OnInit {
+
+  utenteLoggato:UserDTO=new UserDTO;
 
   name: string;
   surname: string;
@@ -77,9 +81,13 @@ export class CreaAutoriPage implements OnInit {
 
   }
 
-  constructor(private fb:FormBuilder, private user: CreaAutoriService, private zone: NgZone) { }
+  constructor(private fb:FormBuilder, private user: CreaAutoriService, private zone: NgZone, private utente:BenvenutoService,
+    private id:ActivatedRoute) { }
 
   ngOnInit() {
+    this.utente.mostraUtente(this.id).subscribe(resp=>{
+      this.utenteLoggato=resp;
+    })
   }
 
 }

@@ -1,3 +1,4 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
    <app-navbar></app-navbar>
@@ -10,22 +11,23 @@
 <ion-content>
 
   <div class="category-block" class="swiper" class="fullclick">
-    <ion-slides [options]="sliderConfig">
-      <ion-slide *ngFor="let item of fumetti.list">
+    <ion-slides [options]="sliderConfig"   >
+      <ion-slide *ngFor="let item of data.list; index as i" >
         <ion-card-title>{{item.name}}
           <ion-card class="main">
-            <div *ngIf="bottom" class="pop" (mouseout)="cliccato()">
+            <div *ngIf="bottom" class="pop" (mouseout)="cliccato()" >
 
               <ion-card>
                 <ion-card-content > {{item.name}} :
-                  <div class="testo"><br>{{info[0].Descrizione}}<br>{{info[0].Genere}}<br>{{info[0].Autore}}<br>{{info[0].Categoria}}</div>
+                  <div class="testo"><br>{{item.description}}<br>{{item.type}}<br>{{item.author.name}} {{item.author.surname}}
+                    <br>{{item.category.name}}</div>
                  
-                </ion-card-content>
+              </ion-card-content>
                 <ion-card-header><img src="https://picsum.photos/400/700" class="sopra"></ion-card-header>
                 
               </ion-card>
             </div>
-            <div *ngIf="top" class="mouseover">
+            <div *ngIf="top" class="mouseover" data-interval="false">
               <a (mouseover)="cliccato()"><img src="https://picsum.photos/400/700"></a>
             </div>
           </ion-card>

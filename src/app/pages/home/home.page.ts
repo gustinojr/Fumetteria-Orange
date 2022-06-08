@@ -1,6 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { interval } from 'rxjs';
+import { BenvenutoService } from 'src/app/components/benvenuto/benvenuto.service';
+import { AuthorListDTO } from 'src/app/models/autori/author-dto';
+import { CategoriaListDTO } from 'src/app/models/categoria/categoria-DTO';
 import { FumettiDto } from 'src/app/models/DTO/fumetti-dto';
+import { UserDTO } from 'src/app/models/user/user-dto';
 import { ListaService } from '../../home.service';
 import { ListaFumettiDto } from '../../models/DTO/lista-dto';
 
@@ -10,17 +15,26 @@ import { ListaFumettiDto } from '../../models/DTO/lista-dto';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
+ 
+  utenteLoggato:UserDTO=new UserDTO;
+
   bottom = false;
   top = true;
-  fumetti: ListaFumettiDto;
 
-  info =
-    [{
-    Descrizione: "Descrizione: Questo è un bel fumetto;",
-    Genere: "Genere: Comic;",
-    Autore: "Autore: Pippo;",
-    Categoria: "Categoria: Misc;"
-}];
+  data: ListaFumettiDto;
+  dataCategoria: CategoriaListDTO;
+  dataAutore: AuthorListDTO;
+
+  // nome: string = "";
+  // description: string = "";
+  // type: string = "";
+  // authorName: string = "";
+  // authorSurname: string = "";
+  // category: string = "";
+  // id: string = "";
+  // authorID: number = null;
+  // categoryID: number = null;
+
 
   sliderConfig = {
     spaceBetween: 10,
@@ -32,15 +46,17 @@ export class HomePage implements OnInit {
   cliccato() {
     this.bottom = !this.bottom;
     this.top = !this.top;
+    
   }
 
-  constructor(private service: ListaService, private router: Router) {
-    this.fumetti = new ListaFumettiDto;
+  constructor(private service: ListaService, private router: Router, private utente:BenvenutoService,
+    private id:ActivatedRoute) {
+    this.data = new ListaFumettiDto;
   }
 
   ngOnInit() {
     this.service.listaFumetti().subscribe((resp) => {
-      this.fumetti = resp;
+      this.data = resp;
     });
 
 

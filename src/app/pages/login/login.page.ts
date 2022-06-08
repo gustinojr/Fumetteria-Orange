@@ -58,12 +58,12 @@ export class LoginPage implements OnInit {
         console.log("Entra");
 
         const data: UserDTO = resp;
-
+        const id=data.id;
         console.log(data);
 
         this.zone.runOutsideAngular(() => {
 
-          window.location.href = '/home';
+          window.location.href = '/home?id='+id;
 
         })
         
