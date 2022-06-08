@@ -15,8 +15,9 @@ export class LoginService {
     user.email = email;
     user.password = password;
 
-    return this.http.post<any>("http://2.44.173.210:7080/comic-be/api/login/login", user); 
+    return this.http.post<any>("http://2.44.173.210:7080/comic-be/api/login/login", user);
 
   }
 
 }
+

@@ -46,6 +46,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomePageModule),
   },
+  {
+    path: 'crea-utente',
+    loadChildren: () => import('./pages/utente/crea-utente/crea-utente.module').then( m => m.CreaUtentePageModule)
+  },
+  {
+    path: 'lista-utenti',
+    loadChildren: () => import('./pages/utente/lista-utenti/lista-utenti.module').then( m => m.ListaUtentiPageModule)
+  },
+
 ];
 
 

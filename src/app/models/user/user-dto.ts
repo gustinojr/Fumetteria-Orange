@@ -6,3 +6,18 @@ export class UserDTO {
     email: string;
 
 }
+
+export class UserListDTO {
+
+    list : List[];
+
+}
+
+export class List {
+
+    id: string;
+    name: string;
+    surname: string;
+    email: string;
+
+}
