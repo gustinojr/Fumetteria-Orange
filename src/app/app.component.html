@@ -8,7 +8,7 @@
         </ion-toolbar>
       </ion-header>
       <ion-content class="colore">
-        <ion-item button [routerLink]="['/pages/home']">
+        <ion-item button [routerLink]="['/home']">
           <ion-label > Home </ion-label>
           <ion-icon name="home-sharp" slot="start"></ion-icon>
         </ion-item>
@@ -22,7 +22,7 @@
             
             <ion-list slot="content" class="color">
               <ion-item button [routerLink]="['/lista-autori']">Lista Autore</ion-item>
-              <ion-item button [routerLink]="['/crea-autore']">Crea Autore</ion-item>
+              <ion-item button [routerLink]="['/crea-autori']">Crea Autore</ion-item>
             </ion-list>
           </ion-accordion>
     
@@ -30,7 +30,7 @@
             <ion-item slot="header"><ion-icon name="bookmarks-sharp" slot="start"></ion-icon>Categoria</ion-item>
             
             <ion-list slot="content" class="color">
-              <ion-item button [routerLink]="['/lista-categoria']">Lista Categoria</ion-item>
+              <ion-item button [routerLink]="['/lista-categorie']">Lista Categorie</ion-item>
               <ion-item button [routerLink]="['/crea-categoria']">Crea Categoria</ion-item>
             </ion-list>
           </ion-accordion>
@@ -39,8 +39,8 @@
             <ion-item slot="header"><ion-icon name="book-sharp" slot="start"></ion-icon>Fumetto</ion-item>
             
             <ion-list slot="content" class="color">
-              <ion-item button [routerLink]="['/lista-fumetto']">Lista Fumetto</ion-item>
-              <ion-item button [routerLink]="['/crea-fumetti']">Crea Fumetto</ion-item>
+              <ion-item button [routerLink]="['/lista-fumetti']">Lista Fumetti</ion-item>
+              <ion-item button [routerLink]="['/crea-fumetto']">Crea Fumetto</ion-item>
             </ion-list>
           </ion-accordion>
     
@@ -48,7 +48,7 @@
             <ion-item slot="header"><ion-icon name="person-sharp" slot="start"></ion-icon>Utente</ion-item>
             
             <ion-list slot="content" class="color">
-              <ion-item button [routerLink]="['/lista-utente']" >Lista Utente</ion-item>
+              <ion-item button [routerLink]="['/lista-utenti']" >Lista Utenti</ion-item>
               <ion-item button [routerLink]="['/crea-utente']">Crea Utente</ion-item>
             </ion-list>
           </ion-accordion>

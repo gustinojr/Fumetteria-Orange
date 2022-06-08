@@ -32,14 +32,14 @@ const routes: Routes = [
     path: 'lista-utenti',
     loadChildren: () => import('./pages/utente/lista-utenti/lista-utenti.module').then( m => m.ListaUtentiPageModule)
   },
-  // {
-  //   path: 'lista-autori',
-  //   loadChildren: () => import('./pages/autori/lista-autori/lista-autori.module').then( m => m.ListaAutoriPageModule)
-  // },
-  // {
-  //   path: 'crea-autori',
-  //   loadChildren: () => import('./pages/autori/crea-autori/crea-autori.module').then( m => m.CreaAutoriPageModule)
-  // },
+  {
+    path: 'lista-autori',
+    loadChildren: () => import('./pages/autori/lista-autori/lista-autori.module').then( m => m.ListaAutoriPageModule)
+  },
+  {
+    path: 'crea-autori',
+    loadChildren: () => import('./pages/autori/crea-autori/crea-autori.module').then( m => m.CreaAutoriPageModule)
+  },
   {
     path: 'crea-categoria',
     loadChildren: () => import('./pages/categorie/crea-categoria/crea-categoria.module').then( m => m.CreaCategoriaPageModule)
