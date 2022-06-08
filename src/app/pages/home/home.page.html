@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+   <app-navbar></app-navbar>
+    <ion-title>
+      HOMEPAGE
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="category-block" class="swiper" class="fullclick">
+    <ion-slides [options]="sliderConfig">
+      <ion-slide *ngFor="let item of fumetti.list">
+        <ion-card-title>{{item.name}}
+          <ion-card class="main">
+            <div *ngIf="bottom" class="pop" (mouseout)="cliccato()">
+
+              <ion-card>
+                <ion-card-content > {{item.name}} :
+                  <div class="testo"><br>{{info[0].Descrizione}}<br>{{info[0].Genere}}<br>{{info[0].Autore}}<br>{{info[0].Categoria}}</div>
+                 
+                </ion-card-content>
+                <ion-card-header><img src="https://picsum.photos/400/700" class="sopra"></ion-card-header>
+                
+              </ion-card>
+            </div>
+            <div *ngIf="top" class="mouseover">
+              <a (mouseover)="cliccato()"><img src="https://picsum.photos/400/700"></a>
+            </div>
+          </ion-card>
+        </ion-card-title>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</ion-content>
+<app-footer></app-footer>

@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar.component';
 import { FormsModule } from '@angular/forms';
 import { IonicModule} from '@ionic/angular';
 import { PopoverModule } from '../popover/popover.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
@@ -14,7 +15,8 @@ import { PopoverModule } from '../popover/popover.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    PopoverModule
+    PopoverModule,
+    
   ],
   exports:[NavbarComponent]
 })

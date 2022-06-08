@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista-autori.page.scss'],
 })
 export class ListaAutoriPage implements OnInit {
+ 
 
   constructor() { }
 
