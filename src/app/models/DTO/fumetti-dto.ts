@@ -1,6 +1,5 @@
 export class FumettiDto {
 
-
     id: string;
     name: string;
     description: string;
