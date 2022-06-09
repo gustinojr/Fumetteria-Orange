@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorListDTO } from 'src/app/models/autori/author-dto';
+import { AuthorListDTO, List } from 'src/app/models/autori/author-dto';
 import { CategoriaListDTO } from 'src/app/models/categoria/categoria-DTO';
 import { FumettiDto, ListaFumettiDto } from 'src/app/models/DTO/fumetti-dto';
 import { ListaFumettiService } from './lista-fumetti.service';
@@ -173,6 +173,8 @@ export class ListaFumettiPage implements OnInit {
 
   updateFumetto() {
 
+    alert(this.authorID + " " + this.categoryID);
+
     this.comic.updateFumetti(this.id, this.nome, this.description, this.type, this.authorID , this.categoryID).subscribe(resp => {
         
       const data: ListaFumettiDto = resp;
@@ -199,16 +201,12 @@ export class ListaFumettiPage implements OnInit {
       this.mandaPopupElimina(false);
 
       this.reset();
-
-      //alert("È stato eliminato l'utente " + data.name + " " + data.surname + ", " + data.email + "!");
       
     }, error => {
       //grazie al nostro fratellino indiano
       this.mandaPopup(this.id, this.nome, this.description, this.type, this.authorID , this.authorName, this.authorSurname, this.categoryID , this.category);
       alert("Si è verificato un errore durante l'eliminazione del fumetto");
     })
-
-    //this.esiste[i] = false;
 
   }
 
@@ -302,18 +300,16 @@ export class ListaFumettiPage implements OnInit {
 
   }
 
-  /*cambiaAutore(id: number) {
-    
-    alert("Entro my dawg");
-    this.authorID = id;
+  cambiaAutore(event) {
+
+    this.authorID = event.value;
 
   }
 
-  cambiaCategoria(id: number) {
+  cambiaCategoria(event) {
     
-    alert("Entro my dawg");
-    this.categoryID = id;
+    this.categoryID = event.value;
 
-  }*/
+  }
 
 }

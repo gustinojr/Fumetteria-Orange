@@ -22,5 +22,17 @@ export class CreaFumettoService {
     return this.http.post<any>("http://2.44.173.210:7080/comic-be/api/comic/create", fumetto);
 
   }
+
+  stampaAutori() {
+
+    return this.http.post<any>("http://2.44.173.210:7080/comic-be/api/author/search/", {}); 
+
+  }
+
+  stampaCategorie() {
+
+    return this.http.post<any>("http://2.44.173.210:7080/comic-be/api/category/search/", {});
+
+  }
   
 }

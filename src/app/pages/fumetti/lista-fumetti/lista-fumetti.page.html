@@ -144,7 +144,7 @@
         <ion-col>
         </ion-col>
         <ion-col>
-          <h1 style="font-weight: bold; font-size: 30px"> Modifica autore </h1>
+          <h1 style="font-weight: bold; font-size: 30px"> Modifica fumetto </h1>
         </ion-col>
         <ion-col>
         </ion-col>
@@ -200,20 +200,15 @@
           <h6 class="ion-text-center" style="font-weight: bold;">Autore</h6>
         </ion-col>
         <ion-col>
-          <!-- <ion-app>
+          <ion-app>
           <ion-list>
              <ion-item>
-              <ion-select placeholder="Autore" interface="action-sheet" value="notifications">
-                <ion-select-option *ngFor="let item of dataAutore.list" (click)="cambiaAutore(item.id)" [value]="item">{{item.name}}</ion-select-option>
+              <ion-select (ionChange)="cambiaAutore($event.target)" placeholder="{{authorName}}" value="notifications" interface="popover">
+                <ion-select-option *ngFor="let item of dataAutore.list" value={{item.id}}>{{item.name}} {{item.surname}}</ion-select-option>
               </ion-select>
             </ion-item>
           </ion-list>  
-        </ion-app> -->
-          <ion-item> 
-            <ion-label class="col-sm-2 col-form-label" for="author" position="floating">Autore</ion-label>
-            <ion-input placeholder="ID autore" id="author" [(ngModel)]="authorID"> 
-            </ion-input>
-          </ion-item>
+        </ion-app>
         </ion-col>
         <ion-col></ion-col>
       </ion-row>
@@ -224,21 +219,15 @@
           <h6 class="ion-text-center" style="font-weight: bold;">Categoria</h6>
         </ion-col>
         <ion-col>
-          <!-- <ion-app>
+          <ion-app>
           <ion-list>
              <ion-item>
-              <ion-label>Categoria</ion-label>
-              <ion-select interface="action-sheet" value="notifications">
-              <ion-select-option *ngFor="let item of dataCategoria.list" (click)="cambiaCategoria(item.id)" [value]="item">{{item.name}}</ion-select-option>
+              <ion-select (ionChange)="cambiaCategoria($event.target)" placeholder="{{category}}" value="notifications" interface="popover">
+              <ion-select-option *ngFor="let item of dataCategoria.list" value={{item.id}}>{{item.name}}</ion-select-option>
               </ion-select>
             </ion-item> 
           </ion-list>
-        </ion-app> -->
-          <ion-item> 
-            <ion-label class="col-sm-2 col-form-label" for="category" position="floating">Categoria</ion-label>
-            <ion-input placeholder="ID categoria" id="category" [(ngModel)]="categoryID"> 
-            </ion-input>
-          </ion-item>
+        </ion-app>
         </ion-col> 
 
         <ion-col>
