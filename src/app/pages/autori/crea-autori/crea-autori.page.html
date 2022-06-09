@@ -6,11 +6,12 @@
     </ion-title>
   </ion-toolbar>
 
-  <app-benvenuto nome="{{utenteLoggato.name}}" cognome="{{utenteLoggato.surname}}" email="{{utenteLoggato.email}}" ></app-benvenuto>
-
+  
 </ion-header>
 
 <ion-content fullscreen="true">
+  <app-benvenuto nome="{{utenteLoggato.name}}" cognome="{{utenteLoggato.surname}}" email="{{utenteLoggato.email}}" ></app-benvenuto>
+
     <ion-grid style="padding:100px;">
       <ion-row>
         <ion-col>
@@ -90,8 +91,7 @@
       </ion-row>
   
     </ion-grid>
+    <app-footer class="footer"></app-footer>
   </ion-content>
 
-  <ion-toolbar>
-    <app-footer></app-footer>
-    </ion-toolbar>
+ 

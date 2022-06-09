@@ -9,3 +9,11 @@
   --ion-color-primary-tint: #30497d;
  
 }
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  --ion-background-color: blueviolet;
+  text-align: center;
+}

@@ -6,11 +6,12 @@
     </ion-title>
   </ion-toolbar>
 
-  <app-benvenuto></app-benvenuto>
+ 
 
 </ion-header>
 
-<ion-content fullscreen="true">
+<ion-content fullscreen="true"> 
+  <app-benvenuto></app-benvenuto>
   <form [formGroup]="formLogin">
     <ion-grid style="padding:100px;">
       <ion-row>
@@ -119,8 +120,7 @@
     </ion-grid>
   
   </form>
+  <app-footer class="footer"></app-footer>
   </ion-content>
 
-  <ion-toolbar>
-    <app-footer></app-footer>
-    </ion-toolbar>
+  

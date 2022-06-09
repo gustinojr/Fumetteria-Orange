@@ -6,13 +6,14 @@
     </ion-title>
   </ion-toolbar>
 
-  <app-benvenuto></app-benvenuto>
+  
 
 </ion-header>
 
 
 
 <ion-content fullscreen="true" *ngIf="pagina" style="max-height: 100%;">
+  <app-benvenuto></app-benvenuto>
   <div class="linea orizzontale">
   <ion-grid >
     <ion-row>
@@ -117,7 +118,7 @@
     <ion-title  style="color:rgb(255, 255, 255)">DevSkill School 2022 - Fumetteria Orange Team</ion-title>
   </ion-toolbar>
 </ion-footer> -->
-
+<app-footer class="footer"></app-footer>
 </ion-content>
 
 <ion-content *ngIf="!pagina" fullscreen="true">
@@ -227,10 +228,7 @@
   
     </ion-grid>
 
-    
+    <app-footer class="footer"></app-footer>
 
 </ion-content>
 
-<ion-toolbar>
-  <app-footer></app-footer>
-  </ion-toolbar>
