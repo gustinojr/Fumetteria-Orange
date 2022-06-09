@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
+import { UserDTO } from 'src/app/models/user/user-dto';
 
 @Component({
   selector: 'app-popover',
@@ -9,6 +10,11 @@ import { PopoverController } from '@ionic/angular';
 export class PopoverComponent implements OnInit {
   constructor(public popoverController: PopoverController) {}
 
+  @Input() nome:string;
+  @Input() cognome:string;
+  @Input() email:string;
+  
+  
   async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
       component: PopoverComponent,

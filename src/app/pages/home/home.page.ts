@@ -60,6 +60,8 @@ export class HomePage implements OnInit {
     });
 
 
-
+    this.utente.mostraUtente(this.id).subscribe(resp=>{
+      this.utenteLoggato=resp;
+    })
   }
 }

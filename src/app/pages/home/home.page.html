@@ -1,7 +1,7 @@
 
 <ion-header [translucent]="true">
   <ion-toolbar>
-   <app-navbar></app-navbar>
+   <app-navbar nome="{{utenteLoggato.name}}" cognome="{{utenteLoggato.surname}}" email="{{utenteLoggato.email}}"></app-navbar>
     <ion-title>
       HOMEPAGE
     </ion-title>
@@ -9,7 +9,8 @@
 </ion-header>
 
 <ion-content>
-
+  <app-benvenuto nome="{{utenteLoggato.name}}" cognome="{{utenteLoggato.surname}}" email="{{utenteLoggato.email}}"></app-benvenuto>
+<br>
   <div class="category-block" class="swiper" class="fullclick">
     <ion-slides [options]="sliderConfig"   >
       <ion-slide *ngFor="let item of data.list; index as i" >
@@ -19,8 +20,8 @@
 
               <ion-card>
                 <ion-card-content > {{item.name}} :
-                  <div class="testo"><br>{{item.description}}<br>{{item.type}}<br>{{item.author.name}} {{item.author.surname}}
-                    <br>{{item.category.name}}</div>
+                  <div class="testo"><br>Descrizione: {{item.description}}<br>Tipo: {{item.type}}<br>Autore: {{item.author.name}} {{item.author.surname}}
+                    <br>Categoria: {{item.category.name}}</div>
                  
               </ion-card-content>
                 <ion-card-header><img src="https://picsum.photos/400/700" class="sopra"></ion-card-header>
@@ -35,5 +36,5 @@
       </ion-slide>
     </ion-slides>
   </div>
+  <app-footer class="footer"></app-footer>
 </ion-content>
-<app-footer></app-footer>

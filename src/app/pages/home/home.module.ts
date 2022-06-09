@@ -8,6 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { NavbarModule } from 'src/app/components/navbar/navbar.module';
 import { FooterModule } from 'src/app/components/footer/footer.module';
+import { BenvenutoModule } from 'src/app/components/benvenuto/benvenuto.module';
 
 
 
@@ -20,7 +21,8 @@ import { FooterModule } from 'src/app/components/footer/footer.module';
     IonicModule,
     HomePageRoutingModule,
     NavbarModule,
-    FooterModule
+    FooterModule,
+    BenvenutoModule
     
   ],
   declarations: [HomePage,]
