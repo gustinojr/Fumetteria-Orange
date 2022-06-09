@@ -173,7 +173,7 @@ export class ListaFumettiPage implements OnInit {
 
   updateFumetto() {
 
-    alert(this.authorID + " " + this.categoryID);
+    // alert(this.authorID + " " + this.categoryID);
 
     this.comic.updateFumetti(this.id, this.nome, this.description, this.type, this.authorID , this.categoryID).subscribe(resp => {
         

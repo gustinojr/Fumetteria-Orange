@@ -72,7 +72,7 @@ export class CreaFumettoPage implements OnInit {
         
       this.dataCategoria = res;
 
-      alert("Categoria: " + this.dataCategoria.list[0].name);
+      // alert("Categoria: " + this.dataCategoria.list[0].name);
         
       })
 
@@ -84,7 +84,7 @@ export class CreaFumettoPage implements OnInit {
         
       this.dataAutore = res;
 
-      alert("Autore: " + this.dataCategoria.list[0].name);
+      // alert("Autore: " + this.dataCategoria.list[0].name);
         
       })
 
