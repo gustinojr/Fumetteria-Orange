@@ -92,9 +92,9 @@
         </ion-col>
         <ion-col>
           <ion-item>
-            <ion-label for="autore" position="floating">ID autore</ion-label>
-            <ion-input placeholder="ID autore" id="autore" [(ngModel)]="authorID" (keyup.enter)="eventoDiClick()"> 
-            </ion-input>
+            <ion-select (ionChange)="cambiaAutore($event.target)" placeholder="Autore" value="notifications" interface="popover">
+              <ion-select-option *ngFor="let item of dataAutore.list" value={{item.id}}>{{item.name}} {{item.surname}}</ion-select-option>
+            </ion-select>
           </ion-item>
         </ion-col>
         <ion-col></ion-col>
@@ -107,10 +107,10 @@
         </ion-col>
         <ion-col>
           <ion-item>
-            <ion-label class="col-sm-2 col-form-label" for="categoria" position="floating">ID categoria</ion-label>
-            <ion-input placeholder="Categoria" id="categoria" [(ngModel)]="categoryID" (keyup.enter)="eventoDiClick()"> 
-            </ion-input>
-          </ion-item>
+            <ion-select (ionChange)="cambiaCategoria($event.target)" placeholder="Categoria" value="notifications" interface="popover">
+            <ion-select-option *ngFor="let item of dataCategoria.list" value={{item.id}}>{{item.name}}</ion-select-option>
+            </ion-select>
+          </ion-item> 
         </ion-col>
 
         <ion-col>
