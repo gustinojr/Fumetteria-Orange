@@ -40,7 +40,7 @@ export class HomePage implements OnInit {
     spaceBetween: 10,
     centeredSlides: true,
     slidesPerView: 1.6,
-    autoplay: true
+    // autoplay: true
   };
 
   cliccato() {
